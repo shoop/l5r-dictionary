@@ -2,79 +2,42 @@ import * as React from 'react';
 
 import './App.css';
 
-import { Definition } from './Definition';
-import { DefinitionListHeader } from './DefinitionListHeader';
-import { DefinitionListItem } from './DefinitionListItem';
+import { Definition, IDefinitionDTO } from './Definition';
+import { DefinitionList } from './DefinitionList';
 
 interface IAppState {
-  definitions: Definition[];
+    definitions: Definition[];
 }
 
 class App extends React.Component<{}, IAppState> {
-  public constructor(props: {}) {
-    super(props);
-
-    this.state = { definitions: [] };
-
-    this.startFetchData();
-  }
-
-  public startFetchData = () => {
-    fetch('definitions.txt')
-      .then(this.onReceiveData);
-  }
-
-  public onReceiveData = (response: Response) => {
-    response.text().then(val => {
-      const newDefinitions = this.parseDefinitions(val);
-      this.setState({ definitions: newDefinitions });
-    });
-  }
-
-  public parseDefinitions(text: string): Definition[] {
-      // Parse definitions
-      const lines = text.split(/\r?\n/) || [];
-
-      const newDefinitions: Definition[] = [];
-      let term: string = "";
-      let definition: string = "";
-      lines.forEach((line) => {
-        if (line === "") {
-          newDefinitions.push(new Definition(term, definition));
-          term = "";
-          definition = "";
-          return;
-        }
-
-        if (term === "") {
-          term = line;
-          return;
-        }
-
-        definition += line;
-      });
-
-      if (term !== "" && definition !== "") {
-        newDefinitions.push(new Definition(term, definition));
-      }
-
-      return newDefinitions;
-  }
-
-  public render() {
-    if (this.state.definitions.length === 0) {
-      return <div>Loading...</div>;
+    public constructor(props: {}) {
+        super(props);
+        
+        this.state = { definitions: [] };
+        
+        this.startFetchData();
     }
-
-    const definitions = this.state.definitions
-      .map((d, i) => <DefinitionListItem key={`definition-${i}`} term={d.term} definition={d.definition} />);
-    return (
-      <div>
-        <DefinitionListHeader definitions={this.state.definitions} />
-        {definitions}
-      </div>
-    );
-  }
+    
+    public startFetchData = () => {
+        fetch('definitions.json')
+            .then(this.onReceiveData);
+    }
+    
+    public onReceiveData = (response: Response) => {
+        response.json().then(val => {
+            const newDefinitions = (val.definitions as IDefinitionDTO[])
+                .map((v) => new Definition(v.term, v.definition));
+            this.setState({ definitions: newDefinitions });
+        });
+    }
+    
+    public render() {
+        if (this.state.definitions.length === 0) {
+            return <div>Loading...</div>;
+        }
+        
+        return <DefinitionList definitions={this.state.definitions} />
+    }
 }
 
 export default App;

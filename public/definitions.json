@@ -1,0 +1,20 @@
+{
+    "definitions": [
+        {
+            "term": "Test term 1",
+            "definition": "Mark*down* test"
+        },
+        {
+            "term": "Test term 2",
+            "definition": "**another style**"
+        },
+        {
+            "term": "Genpuku",
+            "definition": "Coming of age [ceremony](https://en.wikipedia.org/wiki/Genpuku)"
+        },
+        {
+            "term": "Crane Clan",
+            "definition": "The Crane Clan logo is ![Crane Clan Logo](http://homeofthecraneclan.com/wp-content/uploads/2016/08/Mon_Crane.gif). The clan is about..."
+        }
+    ]
+}

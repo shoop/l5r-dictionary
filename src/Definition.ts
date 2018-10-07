@@ -9,3 +9,8 @@ export class Definition {
 
     public firstLetter = () => this.term[0];
 }
+
+export interface IDefinitionDTO {
+    term: string;
+    definition: string;
+}
