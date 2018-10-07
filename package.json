@@ -2,6 +2,7 @@
   "name": "dictionary",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://rpg.sandcat.nl/l5r2018/dictionary/",
   "dependencies": {
     "@types/marked": "^0.4.2",
     "marked": "^0.5.1",
