@@ -17,7 +17,7 @@ export class DefinitionListHeader extends React.Component<IProps> {
             
         return (
             <div className="DefinitionListHeader">
-                {firstLetters.map(v => <span key={v} className="DefinitionListHeader_Item">{v}</span>)}
+                {firstLetters.map(v => <span key={v} className="DefinitionListHeader_Item"><a href={`#header-${v.toLowerCase()}`}>{v}</a></span>)}
             </div>
         );
     }

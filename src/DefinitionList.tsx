@@ -5,6 +5,7 @@ import { DefinitionListHeader } from './DefinitionListHeader';
 import { DefinitionListItem } from './DefinitionListItem';
 
 import "./DefinitionList.css";
+import { DefinitionListItemHeader } from './DefinitionListItemHeader';
 
 interface IProps {
     definitions: Definition[];
@@ -12,13 +13,35 @@ interface IProps {
 
 export class DefinitionList extends React.Component<IProps> {
     public render() {
-        const definitions = this.props.definitions
-            .map((d, i) => <DefinitionListItem key={`definition-${i}`} term={d.term} definition={d.definition} />);
+        let items: JSX.Element[] = [];
+
+        const groupedDefinitions = this.groupByFirstLetter(this.props.definitions);
+        groupedDefinitions.forEach((definitions, key) => {
+            items.push(<DefinitionListItemHeader key={`definition-${key}-header`} letter={key} />);
+            const keyDefinitions = definitions
+                .map((d, i) => <DefinitionListItem key={`definition-${key}-${i}`} term={d.term} definition={d.definition} />);
+            items = items.concat(keyDefinitions);
+        });
+        
         return (
             <div>
                 <DefinitionListHeader definitions={this.props.definitions} />
-                {definitions}
+                {items}
             </div>
         )
-    }    
+    }
+
+    private groupByFirstLetter(list: Definition[]): Map<string, Definition[]> {
+        const map = new Map<string, Definition[]>();
+        list.forEach((item) => {
+            const key = item.firstLetter();
+            const collection = map.get(key);
+            if (!collection) {
+                map.set(key, [item]);
+            } else {
+                collection.push(item);
+            }
+        });
+        return map;
+    }
 }
