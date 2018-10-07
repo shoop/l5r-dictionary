@@ -1,7 +1,8 @@
-.DefinitionListItem dt {
+.DefinitionListItem .DefinitionListItem_Term {
     font-weight: bold;
 }
 
-.DefinitionListItem dd {
+.DefinitionListItem .DefinitionListItem_Definition {
+    padding-left: 1em;
     padding-bottom: 1em;
 }

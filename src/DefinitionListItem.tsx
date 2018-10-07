@@ -14,8 +14,8 @@ export class DefinitionListItem extends React.Component<IProps> {
         const definitionHtml = marked(this.props.definition);
         return (
             <div className="DefinitionListItem">
-                <dt>{this.props.term}</dt>
-                <dd dangerouslySetInnerHTML={{__html: definitionHtml}} />
+                <div className="DefinitionListItem_Term">{this.props.term}</div>
+                <div className="DefinitionListItem_Definition" dangerouslySetInnerHTML={{__html: definitionHtml}} />
             </div>
         )
     }    
