@@ -27,6 +27,9 @@ class App extends React.Component<{}, IAppState> {
         response.json().then(val => {
             const newDefinitions = (val.definitions as IDefinitionDTO[])
                 .map((v) => new Definition(v.term, v.definition));
+            newDefinitions.sort((a, b) => {
+                return a.term.localeCompare(b.term);
+            })
             this.setState({ definitions: newDefinitions });
         });
     }
