@@ -1,0 +1,7 @@
+.DefinitionListItem dt {
+    font-weight: bold;
+}
+
+.DefinitionListItem dd {
+    padding-bottom: 1em;
+}
