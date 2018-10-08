@@ -1,10 +1,8 @@
 .DefinitionListHeader {
-    position: fixed;
     top: auto;
     height: 30px;
     width: 100%;
     padding: 0 20px;
-    background: white;
     line-height: 30px;
     font-size: 30px;
 }
