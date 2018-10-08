@@ -1,0 +1,12 @@
+.DefinitionList {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.DefinitionList_Content {
+    margin-top: 50px;
+    overflow: auto;
+    padding: 12px;
+    box-sizing: border-box;
+}

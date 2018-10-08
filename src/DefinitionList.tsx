@@ -24,9 +24,11 @@ export class DefinitionList extends React.Component<IProps> {
         });
         
         return (
-            <div>
+            <div className="DefinitionList">
                 <DefinitionListHeader definitions={this.props.definitions} />
+                <div className="DefinitionList_Content">
                 {items}
+                </div>
             </div>
         )
     }
