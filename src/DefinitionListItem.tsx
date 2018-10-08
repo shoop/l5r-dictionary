@@ -11,7 +11,7 @@ interface IProps {
 
 export class DefinitionListItem extends React.Component<IProps> {
     public render() {
-        marked.setOptions({ breaks: true });
+        marked.setOptions({ breaks: false });
         const definitionHtml = marked(this.props.definition);
         return (
             <div className="DefinitionListItem">
