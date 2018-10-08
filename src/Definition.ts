@@ -1,8 +1,10 @@
 export class Definition {
+    public id: string;
     public term: string;
     public definition: string;
 
-    public constructor(term: string, definition: string) {
+    public constructor(id: string, term: string, definition: string) {
+        this.id = id;
         this.term = term;
         this.definition = definition;
     }
@@ -11,6 +13,7 @@ export class Definition {
 }
 
 export interface IDefinitionDTO {
+    id: string;
     term: string;
     definition: string;
 }

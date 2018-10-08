@@ -4,6 +4,7 @@ import * as React from 'react';
 import "./DefinitionListItem.css";
 
 interface IProps {
+    id: string;
     term: string;
     definition: string;
 }
@@ -14,7 +15,7 @@ export class DefinitionListItem extends React.Component<IProps> {
         const definitionHtml = marked(this.props.definition);
         return (
             <div className="DefinitionListItem">
-                <div className="DefinitionListItem_Term">{this.props.term}</div>
+                <div className="DefinitionListItem_Term" id={this.props.id}>{this.props.term}</div>
                 <div className="DefinitionListItem_Definition" dangerouslySetInnerHTML={{__html: definitionHtml}} />
             </div>
         )

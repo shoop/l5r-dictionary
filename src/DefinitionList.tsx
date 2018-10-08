@@ -19,7 +19,7 @@ export class DefinitionList extends React.Component<IProps> {
         groupedDefinitions.forEach((definitions, key) => {
             items.push(<DefinitionListItemHeader key={`definition-${key}-header`} letter={key} />);
             const keyDefinitions = definitions
-                .map((d, i) => <DefinitionListItem key={`definition-${key}-${i}`} term={d.term} definition={d.definition} />);
+                .map((d, i) => <DefinitionListItem key={`definition-${key}-${i}`} id={d.id} term={d.term} definition={d.definition} />);
             items = items.concat(keyDefinitions);
         });
         

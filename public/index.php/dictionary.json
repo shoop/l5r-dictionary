@@ -1,20 +1,29 @@
 {
     "definitions": [
         {
+            "id": "test-term-1",
             "term": "Test term 1",
             "definition": "Mark*down* test"
         },
         {
+            "id": "test-term-2",
             "term": "Test term 2",
             "definition": "**another style**"
         },
         {
+            "id": "genpuku",
             "term": "Genpuku",
             "definition": "Coming of age [ceremony](https://en.wikipedia.org/wiki/Genpuku)"
         },
         {
+            "id": "rokugan",
+            "term": "Rokugan",
+            "definition": "The Emerald Empire"
+        },
+        {
+            "id": "crane-clan",
             "term": "Crane Clan",
-            "definition": "The Crane Clan logo is ![Crane Clan Logo](http://homeofthecraneclan.com/wp-content/uploads/2016/08/Mon_Crane.gif). The clan is about..."
+            "definition": "The Crane Clan logo is ![Crane Clan Logo](http://homeofthecraneclan.com/wp-content/uploads/2016/08/Mon_Crane.gif), one of the great clans of [Rokugan](#rokugan)."
         }
     ]
 }

@@ -26,7 +26,7 @@ class App extends React.Component<{}, IAppState> {
     public onReceiveData = (response: Response) => {
         response.json().then(val => {
             const newDefinitions = (val.definitions as IDefinitionDTO[])
-                .map((v) => new Definition(v.term, v.definition));
+                .map((v) => new Definition(v.id, v.term, v.definition));
             newDefinitions.sort((a, b) => {
                 return a.term.localeCompare(b.term);
             })
