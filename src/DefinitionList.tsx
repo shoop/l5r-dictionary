@@ -9,22 +9,32 @@ import { DefinitionListItemHeader } from './DefinitionListItemHeader';
 
 interface IProps {
     definitions: Definition[];
+    listRef: React.RefObject<HTMLDivElement>;
+    hashedRef: React.RefObject<HTMLDivElement>;
 }
 
 export class DefinitionList extends React.Component<IProps> {
+
     public render() {
         let items: JSX.Element[] = [];
 
         const groupedDefinitions = this.groupByFirstLetter(this.props.definitions);
+        const hashedId = window.location.hash.substr(1);
         groupedDefinitions.forEach((definitions, key) => {
             items.push(<DefinitionListItemHeader key={`definition-${key}-header`} letter={key} />);
             const keyDefinitions = definitions
-                .map((d, i) => <DefinitionListItem key={`definition-${key}-${i}`} id={d.id} term={d.term} definition={d.definition} />);
+                .map((d, i) => {
+                    if (hashedId === d.id) {
+                        return <DefinitionListItem key={`definition-${key}-${i}`} id={d.id} term={d.term} definition={d.definition} refToSet={this.props.hashedRef} />;    
+                    }
+
+                    return <DefinitionListItem key={`definition-${key}-${i}`} id={d.id} term={d.term} definition={d.definition} />;
+                });
             items = items.concat(keyDefinitions);
         });
         
         return (
-            <div className="DefinitionList">
+            <div className="DefinitionList" ref={this.props.listRef}>
                 <DefinitionListHeader definitions={this.props.definitions} />
                 <div className="DefinitionList_Content">
                 {items}
