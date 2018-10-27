@@ -25,7 +25,7 @@ class App extends React.Component<{}, IAppState> {
     }
     
     public startFetchData = () => {
-        fetch('index.php/dictionary.json')
+        fetch('dictionary.php/dictionary.json')
             .then(this.onReceiveData);
     }
     
