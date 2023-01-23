@@ -1,7 +1,17 @@
 # See https://help.github.com/ignore-files/ for more about ignoring files.
+# Editor directories and files
+## IntelliJ IDEA
+.idea
+*.iws
+*.iml
+*.ipr
 
-# dependencies
-/node_modules
+# Installation files
+node_modules/
+
+## Yarn
+.pnp.*
+.yarn/*
 
 # testing
 /coverage
@@ -16,6 +26,9 @@
 .env.test.local
 .env.production.local
 
+
+
+# Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
