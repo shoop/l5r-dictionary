@@ -55,7 +55,7 @@ class App extends React.Component<{}, IAppState> {
             imgs.forEach((img) => {
                 promises.push(new Promise<void>((resolve, reject) => {
                     if (!img.complete) {
-                        img.onloadend = () => {
+                        img.onload = () => {
                             resolve();
                         }
                     }
