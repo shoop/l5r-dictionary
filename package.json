@@ -1,26 +1,48 @@
 {
   "name": "dictionary",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "homepage": "https://rpg.sandcat.nl/l5r2018/dictionary/",
-  "dependencies": {
-    "@types/marked": "^0.4.2",
-    "marked": "^0.5.1",
-    "react": "^16.5.2",
-    "react-dom": "^16.5.2",
-    "react-scripts-ts": "3.1.0"
-  },
   "scripts": {
-    "start": "react-scripts-ts start",
-    "build": "react-scripts-ts build",
-    "test": "react-scripts-ts test --env=jsdom",
-    "eject": "react-scripts-ts eject"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "marked": "^4.2.12",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
   },
   "devDependencies": {
-    "@types/jest": "^23.3.3",
-    "@types/node": "^10.11.4",
-    "@types/react": "^16.4.15",
-    "@types/react-dom": "^16.0.8",
-    "typescript": "^3.1.1"
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/marked": "^4.0.8",
+    "@types/node": "^16.18.11",
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "typescript": "^4.9.4"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
