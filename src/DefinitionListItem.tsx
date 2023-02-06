@@ -1,7 +1,7 @@
 import { marked } from 'marked';
 import * as React from 'react';
 
-import "./DefinitionListItem.css";
+import "./DefinitionListItem.scss";
 
 interface IProps {
     id: string;

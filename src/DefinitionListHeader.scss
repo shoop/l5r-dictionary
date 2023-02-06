@@ -1,0 +1,24 @@
+.DefinitionListHeader {
+  position: sticky;
+  top: 0;
+  width: auto;
+  height: 30px;
+  padding: 0 20px;
+  line-height: 30px;
+  font-size: medium;
+  font-weight: bold;
+  text-align: center;
+  background-color: #9a2e00;
+
+  a {
+    color: #fff;
+    font-family: 'Kaushan Script', cursive;
+    text-decoration: none;
+    font-size: large;
+  }
+
+  &_Item {
+    padding-right: 1em;
+    font-variant: small-caps;
+  }
+}

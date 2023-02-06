@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import "./DefinitionListHeader.css";
+import "./DefinitionListHeader.scss";
 
 import { Definition } from './Definition';
 

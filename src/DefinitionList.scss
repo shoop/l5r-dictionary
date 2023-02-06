@@ -1,0 +1,22 @@
+.DefinitionList {
+  margin: 0;
+  height: 100%;
+  overflow: visible;
+  position: sticky;
+  width: auto;
+
+  &_Content {
+    margin-top: 0;
+    overflow: auto;
+    padding: 12px;
+    box-sizing: border-box;
+
+    p {
+      margin: 0.5em 0 0;
+
+      + p {
+       text-indent: 0;
+      }
+    }
+  }
+}

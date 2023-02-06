@@ -4,7 +4,7 @@ import { Definition } from './Definition';
 import { DefinitionListHeader } from './DefinitionListHeader';
 import { DefinitionListItem } from './DefinitionListItem';
 
-import "./DefinitionList.css";
+import "./DefinitionList.scss";
 import { DefinitionListItemHeader } from './DefinitionListItemHeader';
 
 interface IProps {
