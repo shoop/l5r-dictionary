@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import "./DefinitionListItemHeader.css";
+import "./DefinitionListItemHeader.scss";
 
 interface IProps {
     letter: string;

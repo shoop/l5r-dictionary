@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import './App.css';
+import './App.scss';
 
 import { Definition, IDefinitionDTO } from './Definition';
 import { DefinitionList } from './DefinitionList';
