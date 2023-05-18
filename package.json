@@ -5,6 +5,7 @@
   "homepage": "https://rpg.sandcat.nl/l5r2018/dictionary/",
   "scripts": {
     "start": "react-scripts start",
+    "start-win": "WATCHPACK_POLLING=true react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
