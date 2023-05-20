@@ -2,23 +2,26 @@
   position: sticky;
   top: 0;
   width: auto;
-  height: 30px;
-  padding: 0 20px;
-  line-height: 30px;
-  font-size: medium;
+  height: auto;
+  padding: 0 1em;
+  line-height: 2em;
   font-weight: bold;
   text-align: center;
   background-color: #9a2e00;
 
   a {
     color: #fff;
-    font-family: 'Kaushan Script', cursive;
+    font-family: var(--font-family__header--campaign, var(--font-family__header, "Almendra",  TimesNewRoman, Times New Roman, Times, Baskerville, Georgia, serif));
     text-decoration: none;
     font-size: large;
   }
 
   &_Item {
-    padding-right: 1em;
+    display:inline-block;
     font-variant: small-caps;
+
+    &:not(:first-of-type) {
+      margin-left: 1em;
+    }
   }
 }
