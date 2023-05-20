@@ -9,7 +9,7 @@ interface IProps {
 export class DefinitionListItemHeader extends React.Component<IProps> {
     public render() {
         return (
-            <div className="DefinitionListItemHeader"><a id={`header-${this.props.letter.toLowerCase()}`}>{this.props.letter}</a></div>
+            <div className="DefinitionListItemHeader" id={`header-${this.props.letter.toLowerCase()}`}>{this.props.letter}</div>
         )
     }
 }
