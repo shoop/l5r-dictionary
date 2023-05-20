@@ -10,25 +10,30 @@ interface IAppState {
     definitions: Definition[];
 }
 
-class App extends React.Component<{}, IAppState> {
+interface IProps {
+    definitionsUrl?: string;
+}
+
+class App extends React.Component<IProps, IAppState> {
     private listRef: React.RefObject<HTMLDivElement>;
     private hashedRef: React.RefObject<HTMLDivElement>;
 
-    public constructor(props: {}) {
+    public constructor(props: IProps) {
         super(props);
-        
+
         this.state = { loading: true, definitions: [] };
         this.listRef = React.createRef<HTMLDivElement>();
         this.hashedRef = React.createRef<HTMLDivElement>();
 
         this.startFetchData();
     }
-    
+
     public startFetchData = () => {
-        fetch('dictionary.php/dictionary.json')
+        const url = this.props.definitionsUrl || 'dictionary.php/dictionary.json';
+        fetch(url)
             .then(this.onReceiveData);
     }
-    
+
     public onReceiveData = (response: Response) => {
         response.json().then(val => {
             const newDefinitions = (val.definitions as IDefinitionDTO[])
@@ -39,12 +44,12 @@ class App extends React.Component<{}, IAppState> {
             this.setState({ loading: false, definitions: newDefinitions });
         });
     }
-    
+
     public render() {
         if (this.state.loading) {
             return <div>Loading...</div>;
         }
-        
+
         return <DefinitionList definitions={this.state.definitions} listRef={this.listRef} hashedRef={this.hashedRef}/>;
     }
 
@@ -66,7 +71,7 @@ class App extends React.Component<{}, IAppState> {
                 .then((v) => {
                     if (this.hashedRef.current !== null) {
                         this.hashedRef.current.scrollIntoView();
-                    }            
+                    }
                 });
         }
     }
