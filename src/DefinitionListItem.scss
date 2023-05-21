@@ -1,10 +1,18 @@
 .DefinitionListItem {
   .DefinitionListItem_Term {
     font-weight: bold;
+    /* make sure the sticky header doesn't (fully) overlap item headers when jumping to them */
+    padding-top: 4rem;
+    margin-top: -4rem;
   }
 
   .DefinitionListItem_Definition {
     padding-left: 1em;
     padding-bottom: 1em;
+
+    img {
+      max-width: 100%;
+      max-height: 20rem;
+    }
   }
 }

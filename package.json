@@ -2,9 +2,10 @@
   "name": "dictionary",
   "version": "0.2.0",
   "private": true,
-  "homepage": "https://rpg.sandcat.nl/l5r2018/dictionary/",
+  "homepage": "https://rpg.sandcat.nl/",
   "scripts": {
     "start": "react-scripts start",
+    "start-win": "WATCHPACK_POLLING=true react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

@@ -1,12 +1,12 @@
 .DefinitionListItemHeader {
   font-weight: bold;
-  padding-bottom: 10px;
-  font-size: 140%;
-  margin-top: 15px;
+  padding-bottom: 0.5em;
+  font-size: 1.4rem;
+  margin-top: 1em;
+  font-family: var(--font-family__header--campaign, var(--font-family__header, "Almendra",  TimesNewRoman, Times New Roman, Times, Baskerville, Georgia, serif));
+  text-decoration: none;
+  /* make sure the sticky header doesn't (fully) overlap item headers when jumping to them */
+  padding-top: 4rem;
+  margin-top: -4rem;
 
-  a {
-    font-family: 'Kaushan Script', cursive;
-    text-decoration: none;
-    font-size: large;
-  }
 }
